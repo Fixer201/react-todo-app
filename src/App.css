@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+@theme {
+    /* --- CSS Variables --- */
+    /* Colors */
+    --color-background: #0d1321;
+    --color-primary: #003566;
+    --color-secondary: #00bbfa;
+}
+
+@layer utilities {
+    .glow-icon-secondary {
+        filter: drop-shadow(0 0 3px var(--color-secondary)) drop-shadow(0 0 10px var(--color-secondary));
+    }
+
+    .glow-secondary {
+        box-shadow: 0 0 25px 1px var(--color-secondary);
+    }
+}
+
+@layer components {
+    .link {
+        &:hover {
+            filter: drop-shadow(0 0 15px var(--color-secondary));
+        }
+
+        @apply transition-all duration-200 hover:scale-125 hover:text-secondary hover:underline
+    }
+}

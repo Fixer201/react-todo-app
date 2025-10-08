@@ -4,13 +4,17 @@
     /* --- CSS Variables --- */
     /* Colors */
     --color-background: #0d1321;
-    --color-primary: #003566;
-    --color-secondary: #00bbfa;
+    --color-primary: #111d4a;
+    --color-secondary: #0466c8;
 }
 
 @layer utilities {
     .glow-icon-secondary {
         filter: drop-shadow(0 0 3px var(--color-secondary)) drop-shadow(0 0 10px var(--color-secondary));
+    }
+
+    .glow-icon-primary {
+        filter: drop-shadow(0 0 3px var(--color-primary)) drop-shadow(0 0 10px var(--color-primary));
     }
 
     .glow-secondary {
@@ -26,4 +30,24 @@
 
         @apply transition-all duration-200 hover:scale-125 hover:text-secondary hover:underline
     }
+
+    .primary-button {
+        @apply bg-primary text-white py-2 px-4 rounded-lg transition-all duration-200;
+
+        &:hover {
+            @apply bg-secondary text-black font-bold;
+        }
+    }
+
+    .secondary-button {
+        @apply bg-gray-200 text-black py-2 px-4 rounded-lg transition-all duration-200;
+
+        &:hover {
+            @apply bg-primary text-white font-bold;
+        }
+    }
+}
+
+button:hover {
+    cursor: pointer;
 }

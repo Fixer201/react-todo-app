@@ -1,10 +1,10 @@
 import React from 'react';
-import Achievement from '../Achievement';
+import AchievementSection from '../sections/AchievementSection.tsx';
 
 const Main = () => {
   return (
     <div>
-      <Achievement />
+      <AchievementSection />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Achievement = () => {
+const AchievementSection = () => {
   return (
     <section className="flex flex-col justify-center items-center mx-96 mt-12 mb-12 bg-primary border border-secondary rounded-xl h-auto z-10 p-12 gap-8">
       <h2
@@ -54,4 +54,4 @@ const Achievement = () => {
   );
 };
 
-export default Achievement;
+export default AchievementSection;

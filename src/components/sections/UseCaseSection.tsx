@@ -28,7 +28,7 @@ const casesData = [
 
 const UseCaseSection = () => {
   return (
-    <section className="flex flex-col items-center mx-96 h-[1500px] border border-secondary rounded-2xl p-12 bg-primary z-10 glow-secondary-on-hover transition-shadow duration-300">
+    <section className="flex flex-col items-center mx-96 h-fit border border-secondary rounded-2xl p-12 bg-primary z-10 glow-secondary-on-hover transition-shadow duration-300">
       {/* Header */}
       <h2
         className="text-4xl w-fit font-black relative overflow-hidden

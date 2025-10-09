@@ -6,6 +6,7 @@
     --color-background: #0d1321;
     --color-primary: #111d4a;
     --color-secondary: #0466c8;
+    --color-red: #ef233c;
 }
 
 @layer utilities {
@@ -19,6 +20,28 @@
 
     .glow-secondary {
         box-shadow: 0 0 25px 1px var(--color-secondary);
+    }
+
+    .glow-secondary-on-hover {
+        &:hover {
+            box-shadow: 0 0 25px 1px var(--color-secondary);
+        }
+    }
+
+    .glow-red-on-hover {
+        &:hover {
+            filter: drop-shadow(0 0 3px var(--color-red)) drop-shadow(0 0 5px var(--color-red));
+        }
+    }
+
+    .glow-red-on-hover-inner {
+        &:hover {
+            box-shadow: inset 0 0 10px 1px var(--color-red);
+        }
+    }
+
+    .group-hover-glow-red:hover {
+        filter: drop-shadow(0 0 1px var(--color-red)) drop-shadow(0 0 5px var(--color-red));
     }
 }
 

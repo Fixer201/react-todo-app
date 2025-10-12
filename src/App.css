@@ -75,6 +75,14 @@
             @apply bg-primary text-white font-bold;
         }
     }
+
+    .cta-button {
+        @apply bg-secondary text-white py-3 px-6 rounded-full font-semibold transition-all duration-200;
+
+        &:hover {
+            @apply bg-white text-black font-bold;
+        }
+    }
 }
 
 button:hover {

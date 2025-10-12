@@ -61,7 +61,7 @@ const reviewsData: Review[] = [
 const ReviewSection: React.FC = () => {
   return (
     <section
-      className="flex flex-col justify-center items-center mx-96 py-16 bg-primary border border-secondary
+      className="flex flex-col justify-center items-center mx-96 py-16 bg-primary/10 backdrop-blur-sm border border-secondary
              rounded-2xl glow-secondary-on-hover transition-shadow duration-300"
     >
       <h2

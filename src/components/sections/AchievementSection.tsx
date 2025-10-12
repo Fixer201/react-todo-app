@@ -2,11 +2,12 @@ import React from 'react';
 
 const AchievementSection = () => {
   return (
-    <section className="flex flex-col justify-center items-center mx-96 bg-primary border border-secondary glow-secondary-on-hover rounded-xl h-auto z-100 p-12 gap-8 transition-shadow duration-300">
+    <section className="flex flex-col justify-center items-center mx-96 bg-primary/10 backdrop-blur-xs border border-secondary glow-secondary-on-hover rounded-xl h-auto z-100 p-12 gap-8 transition-shadow duration-300">
       {/* Header */}
       <h2
         className="text-4xl w-fit font-black relative overflow-hidden
-                        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 pb-2 after:bg-white after:transition-all after:duration-500 hover:after:w-full text-white text-center glow-icon-secondary transition duration-200"
+        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 pb-2
+        after:bg-white after:transition-all after:duration-500 hover:after:w-full text-white text-center glow-icon-secondary transition duration-200"
       >
         Why Choose EasyToDo?
       </h2>

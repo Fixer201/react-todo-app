@@ -28,12 +28,12 @@ const casesData = [
 
 const UseCaseSection = () => {
   return (
-    <section className="flex flex-col items-center mx-96 h-fit border border-secondary rounded-2xl p-12 bg-primary z-10 glow-secondary-on-hover transition-shadow duration-300">
+    <section className="flex flex-col items-center mx-96 h-fit border border-secondary rounded-2xl p-12 bg-primary/10 backdrop-blur-xs  z-10 glow-secondary-on-hover transition-shadow duration-300">
       {/* Header */}
       <h2
         className="text-4xl w-fit font-black relative overflow-hidden
-                        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 pb-2 after:bg-white
-                        after:transition-all after:duration-500 hover:after:w-full text-white text-center glow-icon-secondary transition duration-200"
+        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 pb-2 after:bg-white
+        after:transition-all after:duration-500 hover:after:w-full text-white text-center glow-icon-secondary transition duration-200"
       >
         EasyToDo Solves Your Pain Points
       </h2>

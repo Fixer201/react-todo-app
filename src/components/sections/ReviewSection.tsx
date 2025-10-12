@@ -65,9 +65,9 @@ const ReviewSection: React.FC = () => {
              rounded-2xl glow-secondary-on-hover transition-shadow duration-300"
     >
       <h2
-        className="text-4xl font-black mb-12 relative text-white text-center
-               after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1
-               after:bg-white after:transition-all after:duration-500 hover:after:w-full"
+        className="text-4xl w-fit font-black relative overflow-hidden
+        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 pb-2
+        after:bg-white after:transition-all after:duration-500 hover:after:w-full text-white text-center glow-icon-secondary transition duration-200"
       >
         What Our Users Say
       </h2>

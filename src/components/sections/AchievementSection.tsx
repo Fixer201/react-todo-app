@@ -2,7 +2,7 @@ import React from 'react';
 
 const AchievementSection = () => {
   return (
-    <section className="flex flex-col justify-center items-center mx-96 mt-12 mb-12 bg-primary border border-secondary glow-secondary-on-hover rounded-xl h-auto z-100 p-12 gap-8 transition-shadow duration-300">
+    <section className="flex flex-col justify-center items-center mx-96 bg-primary border border-secondary glow-secondary-on-hover rounded-xl h-auto z-100 p-12 gap-8 transition-shadow duration-300">
       {/* Header */}
       <h2
         className="text-4xl w-fit font-black relative overflow-hidden

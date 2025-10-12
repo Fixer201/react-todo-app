@@ -1,12 +1,14 @@
 import React from 'react';
 import AchievementSection from '../sections/AchievementSection.tsx';
 import UseCaseSection from '../sections/UseCaseSection.tsx';
+import ReviewSection from '../sections/ReviewSection.tsx';
 
 const Main = () => {
   return (
-    <div>
+    <div className="flex flex-col gap-12">
       <AchievementSection />
       <UseCaseSection />
+      <ReviewSection />
     </div>
   );
 };

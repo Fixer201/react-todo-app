@@ -8,7 +8,7 @@ import Main from './components/layout/Main.tsx';
 function App() {
   return (
     // from-[#10002b]  to-[#240046]
-    <div className="flex flex-col w-full h-[300vh] bg-linear-150 from-[#080708] to-[#001845]">
+    <div className="flex flex-col w-full h-fit bg-linear-150 from-[#080708] to-[#001845]">
       <StarryBackground></StarryBackground>
       <Header />
       <Hero />

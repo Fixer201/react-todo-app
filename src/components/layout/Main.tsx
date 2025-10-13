@@ -1,13 +1,12 @@
-import React from 'react';
-import AchievementSection from '../sections/AchievementSection.tsx';
-import UseCaseSection from '../sections/UseCaseSection.tsx';
-import ReviewSection from '../sections/ReviewSection.tsx';
-import PricingSection from '../sections/PricingSection.tsx';
+import FeaturesSection from '../sections/FeaturesSection';
+import UseCaseSection from '../sections/UseCaseSection';
+import ReviewSection from '../sections/ReviewSection';
+import PricingSection from '../sections/PricingSection';
 
 const Main = () => {
   return (
-    <div className="flex flex-col gap-12">
-      <AchievementSection />
+    <div className="flex flex-col gap-12 justify-center items-center">
+      <FeaturesSection />
       <UseCaseSection />
       <ReviewSection />
       <PricingSection />

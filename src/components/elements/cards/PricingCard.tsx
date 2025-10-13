@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface PricingCardProps {
   planName: string;
   imagePath?: string;
@@ -18,8 +16,8 @@ const PricingCard = ({
   ctaLink,
 }: PricingCardProps) => {
   return (
-    <div
-      className="flex flex-col items-center w-10/12 h-full bg-primary border border-secondary rounded-2xl
+    <article
+      className="flex flex-col items-center w-full lg:w-10/12 h-full bg-primary border border-secondary rounded-2xl
       glow-secondary-on-hover transition-[scale, shadow] duration-300 z-100"
     >
       {/* Svg style */}
@@ -45,19 +43,24 @@ const PricingCard = ({
       </svg>
 
       {/* Image */}
-      <div className="w-full h-1/3 rounded-t-2xl border-b border-secondary">
+      <div className="flex w-full justify-center rounded-t-2xl border-b border-secondary">
         <img
           src={imagePath}
           alt={planName}
-          className="w-full h-full object-contain hover:scale-110 glow-icon-secondary-on-hover transition-[scale,shadow] duration-300 rounded-full"
+          loading="lazy"
+          className="w-64 h-64 object-contain hover:scale-110
+          glow-icon-secondary-on-hover transition-[scale,shadow] duration-300"
         />
       </div>
+
       {/* Plan Name */}
       <h3 className="text-2xl font-bold mt-4 text-white">{planName}</h3>
+
       {/* Price */}
       <p className="text-xl text-secondary mt-2">{price}</p>
+
       {/* Features */}
-      <ul className="flex flex-col gap-3 mt-6 px-6 w-full">
+      <ul className="flex flex-col gap-3 mt-6 mb-12 px-6 w-full">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-3 text-white">
             <svg className="w-5 h-5 mt-0.5 flex-shrink-0" viewBox="0 0 20 20">
@@ -68,7 +71,7 @@ const PricingCard = ({
                 clipRule="evenodd"
               />
             </svg>
-            <span className="text-sm leading-relaxed">{feature}</span>
+            <span className="text-md leading-relaxed">{feature}</span>
           </li>
         ))}
       </ul>
@@ -76,7 +79,7 @@ const PricingCard = ({
       <a href={ctaLink} className="cta-button text-lg mt-auto mb-6">
         {ctaText}
       </a>
-    </div>
+    </article>
   );
 };
 

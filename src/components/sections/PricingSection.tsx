@@ -1,7 +1,16 @@
-import React from 'react';
-import PricingCard from '../elements/cards/PricingCard.tsx';
+import PricingCard from '../elements/cards/PricingCard';
 
-const pricingPlansData = [
+interface PricingPlanData {
+  id: number;
+  planName: string;
+  imagePath?: string;
+  price: string;
+  features: string[];
+  ctaText: string;
+  ctaLink: string;
+}
+
+const pricingPlansData: PricingPlanData[] = [
   {
     id: 1,
     planName: 'Basic',
@@ -50,30 +59,42 @@ const pricingPlansData = [
 
 const PricingSection = () => {
   return (
-    <section className="flex flex-col items-center mx-96 border border-secondary rounded-2xl p-12 bg-primary/10 backdrop-blur-xs  z-10 glow-secondary-on-hover transition-shadow duration-300">
+    <section className="section w-10/12 glow-secondary-on-hover">
       {/* Header */}
       <h2
-        className="text-4xl w-fit font-black relative overflow-hidden
-        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 pb-2 after:bg-white
-        after:transition-all after:duration-500 hover:after:w-full text-white text-center glow-icon-secondary transition duration-200"
+        className="text-3xl lg:text-4xl w-fit font-black section-title-underline
+       text-white text-center glow-icon-secondary transition duration-200"
       >
         Pricing Section
       </h2>
+
       {/* Pring Cards */}
-      <article className="grid grid-cols-1 xl:grid-cols-2 2xl:grid-cols-3 mt-12 w-full h-full place-items-center">
-        {pricingPlansData.map((pricingPlan) => (
-          <PricingCard
-            key={pricingPlan.id}
-            id={pricingPlan.id}
-            imagePath={pricingPlan.imagePath}
-            planName={pricingPlan.planName}
-            price={pricingPlan.price}
-            features={pricingPlan.features}
-            ctaText={pricingPlan.ctaText}
-            ctaLink={pricingPlan.ctaLink}
-          />
-        ))}
-      </article>
+      <div
+        className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3
+         w-full h-full place-items-center gap-y-12 max-xl:gap-6"
+      >
+        {pricingPlansData.map(
+          ({
+            id,
+            imagePath,
+            planName,
+            price,
+            features,
+            ctaText,
+            ctaLink,
+          }: PricingPlanData) => (
+            <PricingCard
+              key={id}
+              imagePath={imagePath}
+              planName={planName}
+              price={price}
+              features={features}
+              ctaText={ctaText}
+              ctaLink={ctaLink}
+            />
+          ),
+        )}
+      </div>
     </section>
   );
 };

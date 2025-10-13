@@ -1,11 +1,10 @@
-import React from 'react';
-import ReviewCard from '../elements/cards/ReviewCard.tsx';
+import ReviewCard from '../elements/cards/ReviewCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-interface Review {
+interface ReviewData {
   id: number;
   avatar: string;
   name: string;
@@ -13,7 +12,7 @@ interface Review {
   text: string;
 }
 
-const reviewsData: Review[] = [
+const reviewsData: ReviewData[] = [
   {
     id: 1,
     avatar: '/reviews/man-placeholder.svg',
@@ -58,43 +57,35 @@ const reviewsData: Review[] = [
   },
 ];
 
-const ReviewSection: React.FC = () => {
+const ReviewSection = () => {
   return (
-    <section
-      className="flex flex-col justify-center items-center mx-96 py-16 bg-primary/10 backdrop-blur-sm border border-secondary
-             rounded-2xl glow-secondary-on-hover transition-shadow duration-300"
-    >
-      <h2
-        className="text-4xl w-fit font-black relative overflow-hidden
-        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 pb-2
-        after:bg-white after:transition-all after:duration-500 hover:after:w-full text-white text-center glow-icon-secondary transition duration-200"
-      >
+    <section className="section glow-secondary-on-hover">
+      <h2 className="text-3xl lg:text-4xl w-fit font-black relative section-title-underline text-white text-center glow-icon-secondary transition duration-200">
         What Our Users Say
       </h2>
 
-      <div className="w-full px-8">
+      <div className="w-full lg:px-8">
         <Swiper
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
           autoplay={{ delay: 4000, disableOnInteraction: false }}
           loop={true}
-          slidesPerView={3}
+          slidesPerView={1}
           breakpoints={{
-            1200: { slidesPerView: 1, spaceBetween: 20 },
-            1500: { slidesPerView: 2, spaceBetween: 25 },
-            1900: { slidesPerView: 3, spaceBetween: 30 },
+            1000: { slidesPerView: 2, spaceBetween: 25 },
+            1800: { slidesPerView: 3, spaceBetween: 30 },
             2200: { slidesPerView: 4, spaceBetween: 30 },
           }}
-          spaceBetween={30}
+          spaceBetween={20}
         >
-          {reviewsData.map((review) => (
-            <SwiperSlide key={review.id} className="p-4">
+          {reviewsData.map(({ id, avatar, name, role, text }: ReviewData) => (
+            <SwiperSlide key={id} className="mb-4 px-5">
               <ReviewCard
-                imagePath={review.avatar}
-                altText={review.name}
-                name={review.name}
-                role={review.role}
-                text={review.text}
+                imagePath={avatar}
+                altText={name}
+                name={name}
+                role={role}
+                text={text}
               />
             </SwiperSlide>
           ))}

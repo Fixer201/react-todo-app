@@ -1,9 +1,9 @@
 import './App.css';
-import Header from './components/layout/Header.tsx';
-import Footer from './components/layout/Footer.tsx';
-import StarryBackground from './components/StarryBackground.tsx';
-import Hero from './components/layout/Hero.tsx';
-import Main from './components/layout/Main.tsx';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
+import StarryBackground from './components/StarryBackground';
+import Hero from './components/layout/Hero';
+import Main from './components/layout/Main';
 
 function App() {
   return (

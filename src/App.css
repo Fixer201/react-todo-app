@@ -49,6 +49,18 @@
     .group-hover-glow-red:hover {
         filter: drop-shadow(0 0 1px var(--color-red)) drop-shadow(0 0 5px var(--color-red));
     }
+
+    .section-title-underline {
+        @apply relative overflow-hidden
+        after:content-[''] after:absolute after:bottom-0 after:left-0
+        after:w-0 after:h-1 pb-2 after:bg-white after:transition-all
+        after:duration-500 hover:after:w-full;
+    }
+
+    .section {
+        @apply flex flex-col p-8 lg:p-12 max-xl:w-10/12 w-7/12 justify-center items-center bg-primary/10 backdrop-blur-xs border border-secondary
+        rounded-xl h-auto z-100 gap-8 transition-shadow duration-300
+    }
 }
 
 @layer components {
@@ -61,7 +73,7 @@
     }
 
     .primary-button {
-        @apply bg-primary text-white py-2 px-4 rounded-lg transition-all duration-200;
+        @apply bg-primary text-white py-2 px-4 rounded-lg transition-colors duration-300;
 
         &:hover {
             @apply bg-secondary text-black font-bold;
@@ -69,7 +81,7 @@
     }
 
     .secondary-button {
-        @apply bg-gray-200 text-black py-2 px-4 rounded-lg transition-all duration-200;
+        @apply bg-gray-200 text-black py-2 px-4 rounded-lg transition-colors duration-300;
 
         &:hover {
             @apply bg-primary text-white font-bold;
@@ -77,7 +89,7 @@
     }
 
     .cta-button {
-        @apply bg-secondary text-white py-3 px-6 rounded-full font-semibold transition-all duration-200;
+        @apply bg-secondary text-white py-3 px-6 rounded-full font-semibold transition-colors duration-300;
 
         &:hover {
             @apply bg-white text-black font-bold;

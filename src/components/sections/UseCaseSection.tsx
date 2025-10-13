@@ -1,8 +1,14 @@
-import React from 'react';
-import UseCasesCards from '../elements/cards/useCasesCards.tsx';
+import UseCaseCard from '../elements/cards/useCaseCard';
+
+interface CaseData {
+  id: number;
+  imagePath: string;
+  headerText: string;
+  descriptionText: string;
+}
 
 // Data for use cases in future can be fetched from an API or database on need basis
-const casesData = [
+const casesData: CaseData[] = [
   {
     id: 1,
     imagePath: '/use-cases/overwhelmed-by-tasks-problem.svg',
@@ -28,30 +34,28 @@ const casesData = [
 
 const UseCaseSection = () => {
   return (
-    <section className="flex flex-col items-center mx-96 h-fit border border-secondary rounded-2xl p-12 bg-primary/10 backdrop-blur-xs  z-10 glow-secondary-on-hover transition-shadow duration-300">
+    <section className="section glow-secondary-on-hover">
       {/* Header */}
-      <h2
-        className="text-4xl w-fit font-black relative overflow-hidden
-        after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-1 pb-2 after:bg-white
-        after:transition-all after:duration-500 hover:after:w-full text-white text-center glow-icon-secondary transition duration-200"
-      >
+      <h2 className="text-3xl lg:text-4xl w-fit font-black section-title-underline text-white text-center glow-icon-secondary transition duration-200">
         EasyToDo Solves Your Pain Points
       </h2>
 
       {/* cases grid article */}
-      <article className="flex flex-col gap-12 mt-12">
+      <div className="flex flex-col gap-12">
         {/* Case 1 */}
-        {casesData.map((caseItem) => (
-          <UseCasesCards
-            key={caseItem.id}
-            id={caseItem.id}
-            imagePath={caseItem.imagePath}
-            altText={caseItem.headerText}
-            headerText={caseItem.headerText}
-            descriptionText={caseItem.descriptionText}
-          />
-        ))}
-      </article>
+        {casesData.map(
+          ({ id, imagePath, headerText, descriptionText }: CaseData) => (
+            <UseCaseCard
+              key={id}
+              id={id}
+              imagePath={imagePath}
+              altText={headerText}
+              headerText={headerText}
+              descriptionText={descriptionText}
+            />
+          ),
+        )}
+      </div>
     </section>
   );
 };

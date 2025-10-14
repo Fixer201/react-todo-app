@@ -2,6 +2,7 @@ import FeaturesSection from '../sections/FeaturesSection';
 import UseCaseSection from '../sections/UseCaseSection';
 import ReviewSection from '../sections/ReviewSection';
 import PricingSection from '../sections/PricingSection';
+import FAQSection from '../sections/FAQSection';
 
 const Main = () => {
   return (
@@ -10,7 +11,7 @@ const Main = () => {
       <UseCaseSection />
       <ReviewSection />
       <PricingSection />
-      {/* FAQSection */}
+      <FAQSection />
       {/* CallToActionSection */}
     </div>
   );

@@ -6,7 +6,7 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ imagePath, title, description }: FeatureCardProps) => {
   return (
-    <article className="flex flex-col items-center group-hover:scale-90 hover:scale-110 transition-all duration-300 text-center p-6 bg-secondary rounded-lg glow-secondary-on-hover">
+    <article className="flex flex-col items-center group-hover:scale-90 hover:scale-110 transition-normal duration-300 text-center p-6 bg-secondary rounded-lg glow-secondary-on-hover">
       {/* Feature Image */}
       <img
         src={imagePath}

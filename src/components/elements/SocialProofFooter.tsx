@@ -24,6 +24,7 @@ const SocialProofFooter = ({
               <img
                 key={index}
                 src={avatar}
+                loading="lazy"
                 alt="user avatar"
                 className="w-8 h-8 rounded-full bg-primary border-2 border-secondary object-cover"
               />

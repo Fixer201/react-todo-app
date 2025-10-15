@@ -22,6 +22,7 @@ const UseCaseCard = ({
       <img
         src={imagePath}
         alt={altText}
+        loading="lazy"
         className="w-full max-w-[300px] mx-auto group-hover:scale-110 h-auto max-lg:p-4 object-cover rounded-lg transition-[shadow, scale] glow-red-on-hover duration-300 hover:scale-100"
       />
 

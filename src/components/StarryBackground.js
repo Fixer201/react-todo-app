@@ -1,19 +1,17 @@
+import { jsx as _jsx } from "react/jsx-runtime";
 import { useRef, useEffect } from 'react';
-
 const StarryBackground = () => {
-    const canvasRef = useRef<HTMLCanvasElement>(null);
-
+    const canvasRef = useRef(null);
     useEffect(() => {
         const canvas = canvasRef.current;
-        if (!canvas) return;
-
+        if (!canvas)
+            return;
         const timeoutId = setTimeout(() => {
             const ctx = canvas.getContext('2d');
-            if (!ctx) return;
-
+            if (!ctx)
+                return;
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-
             const stars = Array.from({ length: 50 }, () => ({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
@@ -21,27 +19,21 @@ const StarryBackground = () => {
                 alpha: Math.random(),
                 delta: Math.random() * 0.02,
             }));
-
-            let animationId: number;
-
+            let animationId;
             const animate = () => {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-
                 stars.forEach((star) => {
                     star.alpha += star.delta;
-                    if (star.alpha <= 0 || star.alpha >= 1) star.delta *= -1;
-
+                    if (star.alpha <= 0 || star.alpha >= 1)
+                        star.delta *= -1;
                     ctx.beginPath();
                     ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
                     ctx.fillStyle = `rgba(255, 255, 255, ${star.alpha})`;
                     ctx.fill();
                 });
-
                 animationId = requestAnimationFrame(animate);
             };
-
             animate();
-
             const handleResize = () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
@@ -50,30 +42,20 @@ const StarryBackground = () => {
                     star.y = Math.random() * canvas.height;
                 });
             };
-
             window.addEventListener('resize', handleResize);
-
             return () => {
                 window.removeEventListener('resize', handleResize);
                 cancelAnimationFrame(animationId);
             };
         }, 100); // Задержка 100 мс перед запуском анимации
-
         return () => clearTimeout(timeoutId);
     }, []);
-
-    return (
-        <canvas
-            ref={canvasRef}
-            style={{
-                position: 'fixed',
-                top: 0,
-                left: 0,
-                zIndex: 0,
-                pointerEvents: 'none',
-            }}
-        />
-    );
+    return (_jsx("canvas", { ref: canvasRef, style: {
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 0,
+            pointerEvents: 'none',
+        } }));
 };
-
 export default StarryBackground;

@@ -11,6 +11,7 @@ const FeatureCard = ({ imagePath, title, description }: FeatureCardProps) => {
       <img
         src={imagePath}
         alt={title}
+        loading="lazy"
         className="w-20 h-20 mb-4 hover:scale-110 transition-transform duration-200"
       />
 

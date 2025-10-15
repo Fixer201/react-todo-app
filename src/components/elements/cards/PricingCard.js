@@ -1,0 +1,6 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import CheckmarkIcon from '../icons/CheckmarkIcon';
+const PricingCard = ({ planName, imagePath, price, features, ctaText, ctaLink, }) => {
+    return (_jsxs("article", { className: "flex flex-col items-center w-full lg:w-10/12 h-full bg-primary border border-secondary rounded-2xl\n      glow-secondary-on-hover transition-[scale, shadow] duration-300 z-100", children: [_jsx("div", { className: "flex w-full justify-center rounded-t-2xl border-b border-secondary", children: _jsx("img", { src: imagePath, alt: planName, loading: "lazy", className: "w-64 h-64 object-contain hover:scale-110\n          glow-icon-secondary-on-hover transition-[scale,shadow] duration-300" }) }), _jsx("h3", { className: "text-2xl font-bold mt-4 text-white", children: planName }), _jsx("p", { className: "text-xl text-secondary mt-2", children: price }), _jsx("ul", { className: "flex flex-col gap-3 mt-6 mb-12 px-6 w-full", children: features.map((feature, index) => (_jsxs("li", { className: "flex items-start gap-3 text-white", children: [_jsx(CheckmarkIcon, { variant: "gradient" }), _jsx("span", { className: "text-md leading-relaxed", children: feature })] }, index))) }), _jsx("a", { href: ctaLink, className: "cta-button text-lg mt-auto mb-6", children: ctaText })] }));
+};
+export default PricingCard;

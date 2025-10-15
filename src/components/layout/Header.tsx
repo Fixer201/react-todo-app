@@ -11,6 +11,7 @@ const Header = () => {
                 width="50"
                 height="50"
                 alt="Logo"
+                loading="lazy"
                 className="glow-icon-secondary hover:scale-110 transition-transform"
               />
             </a>

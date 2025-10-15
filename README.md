@@ -4,12 +4,12 @@
 
 ![Hero Preview](./screenshots/hero.png)
 
-[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://easytodo.vercel.app)
-[![Lighthouse](https://img.shields.io/badge/lighthouse-98%2F100-success)](https://easytodo.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://easytodo-landing.vercel.app/)
+[![Lighthouse](https://img.shields.io/badge/lighthouse-98%2F100-success)](https://easytodo-landing.vercel.app/)
 
 ## 🚀 Quick Links
 
-- **[Live Demo](https://easytodo.vercel.app)**
+- **[Live Demo](https://easytodo-landing.vercel.app/)**
 - **[Repository](https://github.com/yourusername/easytodo-landing)**
 
 ---

@@ -73,15 +73,22 @@
     }
 
     .primary-button {
-        @apply bg-primary text-white py-2 px-4 rounded-lg transition-colors duration-300;
+        @apply flex bg-primary text-white text-center items-center justify-center font-bold py-2 px-4 rounded-lg transition-colors duration-300;
 
         &:hover {
-            @apply bg-secondary text-black font-bold;
+            @apply bg-secondary text-black;
         }
     }
 
+    .text-gradient {
+        background: linear-gradient(135deg, var(--color-secondary) 0%, #764ba2 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
     .secondary-button {
-        @apply bg-gray-200 text-black py-2 px-4 rounded-lg transition-colors duration-300;
+        @apply bg-white flex items-center justify-center text-black py-2 px-4 rounded-lg transition-colors duration-300;
 
         &:hover {
             @apply bg-primary text-white font-bold;
@@ -89,7 +96,7 @@
     }
 
     .cta-button {
-        @apply bg-secondary text-white py-3 px-6 rounded-full font-semibold transition-colors duration-300;
+        @apply bg-secondary flex items-center justify-center text-white py-3 px-6 rounded-xl font-semibold transition-colors duration-300;
 
         &:hover {
             @apply bg-white text-black font-bold;

@@ -3,6 +3,7 @@ import UseCaseSection from '../sections/UseCaseSection';
 import ReviewSection from '../sections/ReviewSection';
 import PricingSection from '../sections/PricingSection';
 import FAQSection from '../sections/FAQSection';
+import CallToActionSection from '../sections/CallToActionSection';
 
 const Main = () => {
   return (
@@ -12,7 +13,7 @@ const Main = () => {
       <ReviewSection />
       <PricingSection />
       <FAQSection />
-      {/* CallToActionSection */}
+      <CallToActionSection />
     </div>
   );
 };

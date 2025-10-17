@@ -7,6 +7,9 @@ const StarryBackground = () => {
         const canvas = canvasRef.current;
         if (!canvas) return;
 
+        let animationId: number;
+        let resizeHandler: (() => void) | null = null;
+
         const timeoutId = setTimeout(() => {
             const ctx = canvas.getContext('2d');
             if (!ctx) return;
@@ -21,8 +24,6 @@ const StarryBackground = () => {
                 alpha: Math.random(),
                 delta: Math.random() * 0.02,
             }));
-
-            let animationId: number;
 
             const animate = () => {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -42,7 +43,7 @@ const StarryBackground = () => {
 
             animate();
 
-            const handleResize = () => {
+            resizeHandler = () => {
                 canvas.width = window.innerWidth;
                 canvas.height = window.innerHeight;
                 stars.forEach((star) => {
@@ -51,15 +52,18 @@ const StarryBackground = () => {
                 });
             };
 
-            window.addEventListener('resize', handleResize);
-
-            return () => {
-                window.removeEventListener('resize', handleResize);
-                cancelAnimationFrame(animationId);
-            };
+            window.addEventListener('resize', resizeHandler);
         }, 100); // Задержка 100 мс перед запуском анимации
 
-        return () => clearTimeout(timeoutId);
+        return () => {
+            clearTimeout(timeoutId);
+            if (animationId) {
+                cancelAnimationFrame(animationId);
+            }
+            if (resizeHandler) {
+                window.removeEventListener('resize', resizeHandler);
+            }
+        };
     }, []);
 
     return (

@@ -13,7 +13,14 @@
       "ESNext"
     ],
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": "src",
+    "outDir": "dist-types",
+    "declaration": true,
+    "declarationDir": "dist-types",
+    "noEmit": false
   },
   "include": [
     "src"

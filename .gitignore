@@ -10,10 +10,8 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+dist-types
 *.local
-
-# Build output - compiled .js from .tsx
-src/**/*.js
 
 # Editor directories and files
 .vscode/*

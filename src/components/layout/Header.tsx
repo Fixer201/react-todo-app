@@ -64,15 +64,15 @@ const Header = () => {
 
                     <motion.ul className="flex gap-4 md:gap-8 text-sm md:text-lg xl:text-xl items-center mx-auto">
                         {navLinks.map(({ id, name, href }: NavLink) => (
-                            <motion.a
+                            <motion.li
                                 variants={linkItem}
                                 transition={{ duration: 0.4, ease: 'easeOut' }}
-                                className="link"
                                 key={id}
-                                href={href}
                             >
-                                {name}
-                            </motion.a>
+                                <a href={href} className="link">
+                                    {name}
+                                </a>
+                            </motion.li>
                         ))}
                     </motion.ul>
 

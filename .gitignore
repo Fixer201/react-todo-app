@@ -14,10 +14,12 @@ tsconfig.tsbuildinfo
 dist-types
 *.local
 
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
+.claude
 .DS_Store
 *.suo
 *.ntvs*

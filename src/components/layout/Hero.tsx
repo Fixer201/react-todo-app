@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import {
     container,
     scaleFadeIn,
-    section,
+    sectionSlideFromTop,
 } from '../../animations/motionVariants';
 
 const Hero = () => {
@@ -15,7 +15,7 @@ const Hero = () => {
                 className="flex flex-col m-auto gap-4 text-center"
             >
                 <motion.h1
-                    variants={section}
+                    variants={sectionSlideFromTop}
                     transition={{
                         duration: 0.7,
                         ease: 'easeOut',
@@ -25,7 +25,7 @@ const Hero = () => {
                     Welcome to EasyToDo
                 </motion.h1>
                 <motion.p
-                    variants={section}
+                    variants={sectionSlideFromTop}
                     transition={{
                         duration: 1,
                         ease: 'easeOut',

@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import {
     container,
-    section,
+    sectionSlideFromTop,
     linkItem,
     headerSlide,
 } from '../../animations/motionVariants';
@@ -40,7 +40,7 @@ const Header = () => {
             >
                 <div className="flex px-8 lg:px-12 h-full w-full items-center font-light">
                     <motion.div
-                        variants={section}
+                        variants={sectionSlideFromTop}
                         transition={{
                             duration: 0.8,
                             ease: 'easeOut',
@@ -77,7 +77,7 @@ const Header = () => {
                     </motion.ul>
 
                     <motion.div
-                        variants={section}
+                        variants={sectionSlideFromTop}
                         transition={{
                             duration: 0.8,
                             ease: 'easeOut',

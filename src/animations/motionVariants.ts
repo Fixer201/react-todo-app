@@ -15,8 +15,13 @@ export const container = {
     },
 };
 
-export const section = {
+export const sectionSlideFromTop = {
     hidden: { y: -50, opacity: 0 },
+    show: { y: 0, opacity: 1 },
+};
+
+export const sectionSlideFromBottom = {
+    hidden: { y: 50, opacity: 0 },
     show: { y: 0, opacity: 1 },
 };
 

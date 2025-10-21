@@ -1,6 +1,12 @@
 import ReviewCard from '../elements/cards/ReviewCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay } from 'swiper/modules';
+import { motion } from 'motion/react';
+import {
+    sectionSlideFromTop,
+    sectionSlideFromBottom,
+    scaleFadeIn,
+} from '../../animations/motionVariants';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
@@ -59,12 +65,41 @@ const reviewsData: ReviewData[] = [
 
 const ReviewSection = () => {
   return (
-    <section className="section glow-secondary-on-hover">
-      <h2 className="text-3xl lg:text-4xl w-fit font-black relative section-title-underline text-white text-center glow-icon-secondary transition duration-200">
-        What Our Users Say
-      </h2>
+    <motion.section
+      variants={sectionSlideFromBottom}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      transition={{
+        when: 'beforeChildren',
+        duration: 0.7,
+        ease: 'easeOut',
+      }}
+      className="section glow-secondary-on-hover"
+    >
+      {/* Header */}
+      <motion.div
+        variants={sectionSlideFromTop}
+        transition={{
+          duration: 1,
+          ease: 'easeOut',
+        }}
+      >
+        <h2 className="text-3xl lg:text-4xl w-fit font-black relative section-title-underline text-white text-center glow-icon-secondary transition duration-200">
+          What Our Users Say
+        </h2>
+      </motion.div>
 
-      <div className="w-full lg:px-8">
+      {/* Swiper Container */}
+      <motion.div
+        variants={scaleFadeIn}
+        transition={{
+          duration: 1,
+          ease: 'easeOut',
+          delay: 0.3,
+        }}
+        className="w-full lg:px-8"
+      >
         <Swiper
           modules={[Pagination, Autoplay]}
           pagination={{ clickable: true }}
@@ -90,8 +125,8 @@ const ReviewSection = () => {
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

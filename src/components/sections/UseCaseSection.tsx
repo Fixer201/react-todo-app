@@ -1,4 +1,11 @@
 import UseCaseCard from '../elements/cards/useCaseCard';
+import { motion } from 'motion/react';
+import {
+    sectionSlideFromTop,
+    sectionSlideFromBottom,
+    slideFromLeft,
+    slideFromRight,
+} from '../../animations/motionVariants';
 
 interface CaseData {
   id: number;
@@ -34,29 +41,63 @@ const casesData: CaseData[] = [
 
 const UseCaseSection = () => {
   return (
-    <section className="section glow-secondary-on-hover">
+    <motion.section
+      variants={sectionSlideFromBottom}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      transition={{
+        when: 'beforeChildren',
+        duration: 0.7,
+        ease: 'easeOut',
+      }}
+      className="section glow-secondary-on-hover"
+    >
       {/* Header */}
-      <h2 className="text-3xl lg:text-4xl w-fit font-black section-title-underline text-white text-center glow-icon-secondary transition duration-200">
-        EasyToDo Solves Your Pain Points
-      </h2>
+      <motion.div
+        variants={sectionSlideFromTop}
+        transition={{
+          duration: 1,
+          ease: 'easeOut',
+        }}
+      >
+        <h2 className="text-3xl lg:text-4xl w-fit font-black section-title-underline text-white text-center glow-icon-secondary transition duration-200">
+          EasyToDo Solves Your Pain Points
+        </h2>
+      </motion.div>
 
       {/* cases grid article */}
-      <div className="flex flex-col gap-12">
-        {/* Case 1 */}
+      <motion.div
+        variants={sectionSlideFromBottom}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+        transition={{
+          when: 'beforeChildren',
+          staggerChildren: 0.3,
+          delayChildren: 0.3,
+        }}
+        className="flex flex-col gap-12"
+      >
         {casesData.map(
           ({ id, imagePath, headerText, descriptionText }: CaseData) => (
-            <UseCaseCard
+            <motion.div
               key={id}
-              id={id}
-              imagePath={imagePath}
-              altText={headerText}
-              headerText={headerText}
-              descriptionText={descriptionText}
-            />
+              variants={id % 2 === 0 ? slideFromRight : slideFromLeft}
+              transition={{ duration: 1, ease: 'easeOut' }}
+            >
+              <UseCaseCard
+                id={id}
+                imagePath={imagePath}
+                altText={headerText}
+                headerText={headerText}
+                descriptionText={descriptionText}
+              />
+            </motion.div>
           ),
         )}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 };
 

@@ -108,7 +108,7 @@ const Header = () => {
                     </motion.div>
 
                     {/* Center: Navigation Links */}
-                    <motion.ul className="flex gap-2 lg:gap-4 md:gap-8 text-sm xl:text-lg items-center">
+                    <motion.ul className="flex gap-2 lg:gap-6 md:gap-8 xl:gap-10 text-sm xl:text-lg items-center">
                         {navLinks.map(({ id, name, href }: NavLink) => (
                             <motion.li
                                 variants={linkItem}

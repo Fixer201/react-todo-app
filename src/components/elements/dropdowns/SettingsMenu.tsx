@@ -60,7 +60,7 @@ const SettingsMenu: React.FC<SettingsMenuProps> = ({
                            bg-primary shadow-lg ring-1 ring-black/5
                            transition duration-200 ease-out
                            data-[closed]:scale-95 data-[closed]:opacity-0
-                           z-50"
+                           z-100"
             >
                 <div className="p-1">
                     {/* Settings Header */}

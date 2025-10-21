@@ -4,10 +4,11 @@ import {
     scaleFadeIn,
     sectionSlideFromTop,
 } from '../../animations/motionVariants';
+import { Button } from '../elements/buttons';
 
 const Hero = () => {
     return (
-        <div className="flex lg:mx-96 h-96 mt-24 rounded-2xl z-10">
+        <div className="flex w-3/4 lg:w-1/2 max-w-2xl self-center h-full mb-24 mt-36 rounded-2xl z-10">
             <motion.div
                 variants={container}
                 initial="hidden"
@@ -42,16 +43,21 @@ const Hero = () => {
                     }}
                     className="flex justify-center gap-8 mt-6"
                 >
-                    <button className="primary-button text-lg font-bold w-36 md:w-48 h-14">
+                    <Button
+                        variant="primary"
+                        size="lg"
+                        className="w-36 md:w-48 h-14"
+                    >
                         Get Started
-                    </button>
+                    </Button>
 
-                    <button
-                        className="secondary-button font-bold
-               text-lg  w-36 md:w-48 h-14"
+                    <Button
+                        variant="secondary"
+                        size="lg"
+                        className="w-36 md:w-48 h-14"
                     >
                         Learn More
-                    </button>
+                    </Button>
                 </motion.div>
             </motion.div>
         </div>

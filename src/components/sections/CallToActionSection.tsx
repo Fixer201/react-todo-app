@@ -1,5 +1,6 @@
 import SocialProofFooter from '../elements/SocialProofFooter';
 import CheckmarkIcon from '../elements/icons/CheckmarkIcon';
+import { Button } from '../elements/buttons';
 import { motion } from 'motion/react';
 import {
     sectionSlideFromTop,
@@ -102,20 +103,28 @@ const CallToActionSection = () => {
                     ease: 'easeOut',
                     delay: 0.5,
                 }}
-                className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6"
+                className="flex flex-col sm:flex-row justify-center items-stretch gap-4 mb-6"
             >
-                <a
+                <Button
+                    variant="cta"
+                    size="lg"
                     href="#"
-                    className="cta-button w-full sm:w-64 h-14 text-lg glow-secondary-on-hover transition duration-300"
+                    allowWrap={true}
+                    maxWidth="max-w-xs"
+                    className="w-full sm:w-64 min-h-14 glow-secondary-on-hover"
                 >
                     Start Free Trial →
-                </a>
-                <a
+                </Button>
+                <Button
+                    variant="secondary"
+                    size="lg"
                     href="#"
-                    className="secondary-button w-full sm:w-64 h-14 text-lg"
+                    allowWrap={true}
+                    maxWidth="max-w-xs"
+                    className="w-full sm:w-64 min-h-14"
                 >
                     View Pricing
-                </a>
+                </Button>
             </motion.div>
 
             {/* Social Proof */}

@@ -61,6 +61,19 @@
         @apply flex flex-col p-8 lg:p-12 max-xl:w-10/12 w-7/12 justify-center items-center bg-primary/10 backdrop-blur-xs border border-secondary
         rounded-xl h-auto z-100 gap-8 transition-shadow duration-300
     }
+
+    /* Screen reader only - hides element visually but keeps it accessible */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
 }
 
 @layer components {
@@ -106,4 +119,14 @@
 
 button:hover {
     cursor: pointer;
+}
+
+/* Swiper equal height slides */
+.swiper-wrapper {
+    align-items: stretch;
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
 }

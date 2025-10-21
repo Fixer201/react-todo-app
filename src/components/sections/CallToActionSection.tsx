@@ -110,7 +110,6 @@ const CallToActionSection = () => {
                     size="lg"
                     href="#"
                     allowWrap={true}
-                    maxWidth="max-w-xs"
                     className="w-full sm:w-64 min-h-14 glow-secondary-on-hover"
                 >
                     Start Free Trial →
@@ -120,7 +119,6 @@ const CallToActionSection = () => {
                     size="lg"
                     href="#"
                     allowWrap={true}
-                    maxWidth="max-w-xs"
                     className="w-full sm:w-64 min-h-14"
                 >
                     View Pricing

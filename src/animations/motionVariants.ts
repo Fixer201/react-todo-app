@@ -34,3 +34,13 @@ export const scaleFadeIn = {
     hidden: { scale: 0.9, opacity: 0 },
     show: { scale: 1, opacity: 1 },
 };
+
+export const slideFromLeft = {
+    hidden: { x: -100, opacity: 0 },
+    show: { x: 0, opacity: 1 },
+};
+
+export const slideFromRight = {
+    hidden: { x: 100, opacity: 0 },
+    show: { x: 0, opacity: 1 },
+};

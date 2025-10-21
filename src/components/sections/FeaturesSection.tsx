@@ -42,7 +42,8 @@ const FeaturesSection = () => {
         <motion.section
             variants={sectionSlideFromBottom}
             initial="hidden"
-            animate="show"
+            whileInView="show"
+            viewport={{ once: true }}
             transition={{
                 when: 'beforeChildren',
                 duration: 0.7,
@@ -67,7 +68,8 @@ const FeaturesSection = () => {
             <motion.div
                 variants={sectionSlideFromBottom}
                 initial="hidden"
-                animate="show"
+                whileInView="show"
+                viewport={{ once: true }}
                 transition={{
                     when: 'beforeChildren',
                     staggerChildren: 0.3,

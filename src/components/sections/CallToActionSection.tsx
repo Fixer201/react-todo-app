@@ -1,5 +1,12 @@
 import SocialProofFooter from '../elements/SocialProofFooter';
 import CheckmarkIcon from '../elements/icons/CheckmarkIcon';
+import { motion } from 'motion/react';
+import {
+    sectionSlideFromTop,
+    sectionSlideFromBottom,
+    scaleFadeIn,
+    linkItem,
+} from '../../animations/motionVariants';
 
 const SocialProofData = {
     avatars: [
@@ -23,9 +30,27 @@ const valuePropsData = [
 
 const CallToActionSection = () => {
     return (
-        <section className="section glow-secondary-on-hover">
-            {/*Header */}
-            <div className="flex flex-col items-center justify-center text-center space-y-4 mb-8">
+        <motion.section
+            variants={sectionSlideFromBottom}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{
+                when: 'beforeChildren',
+                duration: 0.7,
+                ease: 'easeOut',
+            }}
+            className="section glow-secondary-on-hover"
+        >
+            {/* Header */}
+            <motion.div
+                variants={sectionSlideFromTop}
+                transition={{
+                    duration: 1,
+                    ease: 'easeOut',
+                }}
+                className="flex flex-col items-center justify-center text-center space-y-4 mb-8"
+            >
                 <h2 className="text-3xl lg:text-4xl w-fit font-black relative section-title-underline text-white text-center glow-icon-secondary transition duration-200">
                     Ready to{' '}
                     <span className="text-gradient">3x Your Productivity?</span>
@@ -34,13 +59,26 @@ const CallToActionSection = () => {
                     Join thousands of teams who transformed their workflow with
                     EasyToDo
                 </p>
-            </div>
+            </motion.div>
 
             {/* Value Props */}
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-6 mb-8">
+            <motion.div
+                variants={sectionSlideFromBottom}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{
+                    when: 'beforeChildren',
+                    staggerChildren: 0.15,
+                    delayChildren: 0.3,
+                }}
+                className="flex flex-col lg:flex-row justify-center items-center gap-6 mb-8"
+            >
                 {valuePropsData.map(({ id, text, highlight }) => (
-                    <div
+                    <motion.div
                         key={id}
+                        variants={linkItem}
+                        transition={{ duration: 0.6, ease: 'easeOut' }}
                         className="flex items-center gap-2 text-gray-300"
                     >
                         <CheckmarkIcon variant="simple" />
@@ -52,12 +90,20 @@ const CallToActionSection = () => {
                             )}
                             {text}
                         </span>
-                    </div>
+                    </motion.div>
                 ))}
-            </div>
+            </motion.div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6">
+            <motion.div
+                variants={scaleFadeIn}
+                transition={{
+                    duration: 0.8,
+                    ease: 'easeOut',
+                    delay: 0.5,
+                }}
+                className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-6"
+            >
                 <a
                     href="#"
                     className="cta-button w-full sm:w-64 h-14 text-lg glow-secondary-on-hover transition duration-300"
@@ -70,16 +116,26 @@ const CallToActionSection = () => {
                 >
                     View Pricing
                 </a>
-            </div>
+            </motion.div>
 
-            <SocialProofFooter
-                avatars={SocialProofData.avatars}
-                userCount={SocialProofData.userCount}
-                timeframe={SocialProofData.timeframe}
-                rating={SocialProofData.rating}
-                reviewCount={SocialProofData.reviewCount}
-            />
-        </section>
+            {/* Social Proof */}
+            <motion.div
+                variants={sectionSlideFromBottom}
+                transition={{
+                    duration: 0.8,
+                    ease: 'easeOut',
+                    delay: 0.7,
+                }}
+            >
+                <SocialProofFooter
+                    avatars={SocialProofData.avatars}
+                    userCount={SocialProofData.userCount}
+                    timeframe={SocialProofData.timeframe}
+                    rating={SocialProofData.rating}
+                    reviewCount={SocialProofData.reviewCount}
+                />
+            </motion.div>
+        </motion.section>
     );
 };
 

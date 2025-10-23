@@ -7,6 +7,12 @@
     --color-primary: #111d4a;
     --color-secondary: #0466c8;
     --color-red: #ef233c;
+
+    /* Z-Index Scale */
+    --z-index-100: 100;
+    --z-index-999: 999;
+    --z-index-1000: 1000;
+    --z-index-1001: 1001;
 }
 
 @layer utilities {
@@ -78,11 +84,29 @@
 
 @layer components {
     .link {
+        position: relative;
+
         &:hover {
-            filter: drop-shadow(0 0 15px var(--color-secondary));
+            filter: drop-shadow(0 0 8px var(--color-secondary));
         }
 
-        @apply transition-normal duration-200 hover:scale-125 hover:text-secondary hover:underline
+        /* Underline animation */
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-secondary);
+            transition: width 0.3s ease-out;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+
+        @apply transition-all duration-200 hover:text-secondary
     }
 
     .primary-button {
@@ -94,10 +118,21 @@
     }
 
     .text-gradient {
-        background: linear-gradient(135deg, var(--color-secondary) 0%, #764ba2 100%);
+        background: linear-gradient(135deg, var(--color-secondary) 0%, #0096ff 50%, #764ba2 100%);
+        background-size: 200% auto;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
+        animation: gradient-shift 4s ease infinite;
+    }
+
+    @keyframes gradient-shift {
+        0%, 100% {
+            background-position: 0% 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
     }
 
     .secondary-button {

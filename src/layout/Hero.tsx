@@ -3,8 +3,8 @@ import {
     container,
     scaleFadeIn,
     sectionSlideFromTop,
-} from '../../animations/motionVariants';
-import { Button } from '../elements/buttons';
+} from '../animations/motionVariants';
+import { Button } from '../components/elements/buttons';
 
 const Hero = () => {
     return (

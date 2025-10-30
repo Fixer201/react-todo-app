@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Bell, LogIn, LogOut, User as UserIcon, UserPlus } from 'lucide-react';
-import { navLinks, NavLink } from '../layout/Header';
+import { navLinks, NavLink } from '../../layout/Header';
 
 interface NavigationSectionProps {
     setIsMenuOpen: (value: boolean) => void;
@@ -41,45 +41,36 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                     Navigation
                 </motion.div>
                 <ul className="flex flex-col gap-1">
-                    {navLinks.map(
-                        ({
-                             id,
-                             name,
-                             href,
-                             icon,
-                         }: NavLink) => (
-                            <motion.li
-                                key={id}
-                                initial={{
-                                    x: 50,
-                                    opacity: 0,
-                                }}
-                                animate={{
-                                    x: 0,
-                                    opacity: 1,
-                                }}
-                                transition={{
-                                    delay: 0.15 + id * 0.05,
-                                    duration: 0.3,
-                                }}
+                    {navLinks.map(({ id, name, href, icon }: NavLink) => (
+                        <motion.li
+                            key={id}
+                            initial={{
+                                x: 50,
+                                opacity: 0,
+                            }}
+                            animate={{
+                                x: 0,
+                                opacity: 1,
+                            }}
+                            transition={{
+                                delay: 0.15 + id * 0.05,
+                                duration: 0.3,
+                            }}
+                        >
+                            <a
+                                href={href}
+                                onClick={() => setIsMenuOpen(false)}
+                                className="flex items-center gap-3 px-3 py-3 rounded-lg text-white hover:bg-secondary hover:text-black transition-colors duration-150 group"
                             >
-                                <a
-                                    href={href}
-                                    onClick={() =>
-                                        setIsMenuOpen(false)
-                                    }
-                                    className="flex items-center gap-3 px-3 py-3 rounded-lg text-white hover:bg-secondary hover:text-black transition-colors duration-150 group"
-                                >
-                                    <span className="text-secondary group-hover:text-black transition-colors">
-                                        {icon}
-                                    </span>
-                                    <span className="text-sm font-medium">
-                                        {name}
-                                    </span>
-                                </a>
-                            </motion.li>
-                        ),
-                    )}
+                                <span className="text-secondary group-hover:text-black transition-colors">
+                                    {icon}
+                                </span>
+                                <span className="text-sm font-medium">
+                                    {name}
+                                </span>
+                            </a>
+                        </motion.li>
+                    ))}
                 </ul>
             </div>
 
@@ -121,9 +112,7 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                                 size={18}
                                 className="text-secondary group-hover:text-black transition-colors"
                             />
-                            <span className="text-sm font-medium">
-                                                    Login
-                                                </span>
+                            <span className="text-sm font-medium">Login</span>
                         </motion.button>
                         <motion.button
                             initial={{ x: 50, opacity: 0 }}
@@ -139,9 +128,7 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                             className="flex items-center gap-3 px-3 py-3 bg-secondary text-black rounded-lg hover:brightness-110 transition-all duration-150 glow-secondary"
                         >
                             <UserPlus size={18} />
-                            <span className="text-sm font-bold">
-                                                    Sign Up
-                                                </span>
+                            <span className="text-sm font-bold">Sign Up</span>
                         </motion.button>
                     </div>
                 ) : (
@@ -157,14 +144,11 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                             className="flex items-center gap-3 px-3 py-3 bg-secondary/10 rounded-lg border border-secondary/30"
                         >
                             <div className="w-8 h-8 rounded-full bg-secondary flex items-center justify-center">
-                                <UserIcon
-                                    size={16}
-                                    className="text-black"
-                                />
+                                <UserIcon size={16} className="text-black" />
                             </div>
                             <span className="text-sm font-medium">
-                                                    {userName}
-                                                </span>
+                                {userName}
+                            </span>
                         </motion.div>
 
                         <motion.button
@@ -185,8 +169,8 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                                 className="text-secondary group-hover:text-black transition-colors"
                             />
                             <span className="text-sm font-medium">
-                                                    My Profile
-                                                </span>
+                                My Profile
+                            </span>
                         </motion.button>
 
                         <motion.button
@@ -207,12 +191,12 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                                 className="text-secondary group-hover:text-black transition-colors"
                             />
                             <span className="text-sm font-medium flex-1 text-left">
-                                                    Notifications
-                                                </span>
+                                Notifications
+                            </span>
                             {notificationCount > 0 && (
                                 <span className="px-2 py-0.5 text-xs bg-secondary text-black rounded-full font-bold">
-                                                        {notificationCount}
-                                                    </span>
+                                    {notificationCount}
+                                </span>
                             )}
                         </motion.button>
 
@@ -236,9 +220,7 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                                 size={18}
                                 className="text-red-400 group-hover:text-red-300 transition-colors"
                             />
-                            <span className="text-sm font-medium">
-                                                    Logout
-                                                </span>
+                            <span className="text-sm font-medium">Logout</span>
                         </motion.button>
                     </div>
                 )}

@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@theme {
+    /* --- CSS Variables --- */
+    /* Colors */
+    --color-background: #0d1321;
+    --color-primary: #111d4a;
+    --color-secondary: #0466c8;
+    --color-red: #ef233c;
+
+    /* Z-Index Scale */
+    --z-index-100: 100;
+    --z-index-999: 999;
+    --z-index-1000: 1000;
+    --z-index-1001: 1001;
+}

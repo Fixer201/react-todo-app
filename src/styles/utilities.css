@@ -1,0 +1,92 @@
+/* ============================================
+   UTILITIES LAYER
+   ============================================ */
+@layer utilities {
+    /* --- Glow Effects --- */
+    .glow-icon-secondary {
+        filter: drop-shadow(0 0 3px var(--color-secondary)) drop-shadow(0 0 10px var(--color-secondary));
+    }
+
+    .glow-icon-secondary-on-hover {
+        &:hover {
+            filter: drop-shadow(0 0 3px var(--color-secondary)) drop-shadow(0 0 10px var(--color-secondary));
+        }
+    }
+
+    .glow-icon-primary {
+        filter: drop-shadow(0 0 3px var(--color-primary)) drop-shadow(0 0 10px var(--color-primary));
+    }
+
+    .glow-secondary {
+        box-shadow: 0 0 25px 1px var(--color-secondary);
+    }
+
+    .glow-secondary-on-hover {
+        &:hover {
+            box-shadow: 0 0 25px 1px var(--color-secondary);
+        }
+    }
+
+    .glow-red-on-hover {
+        &:hover {
+            filter: drop-shadow(0 0 3px var(--color-red)) drop-shadow(0 0 5px var(--color-red));
+        }
+    }
+
+    .glow-red-on-hover-inner {
+        &:hover {
+            box-shadow: inset 0 0 10px 1px var(--color-red);
+        }
+    }
+
+    .group-hover-glow-red:hover {
+        filter: drop-shadow(0 0 1px var(--color-red)) drop-shadow(0 0 5px var(--color-red));
+    }
+
+    /* --- Layout Utilities --- */
+    .section-title-underline {
+        @apply relative overflow-hidden
+        after:content-[''] after:absolute after:bottom-0 after:left-0
+        after:w-0 after:h-1 pb-2 after:bg-white after:transition-normal
+        after:duration-500 hover:after:w-full;
+    }
+
+    .section {
+        @apply flex flex-col p-8 lg:p-12 max-xl:w-10/12 w-7/12 justify-center items-center bg-primary/10 backdrop-blur-xs border border-secondary
+        rounded-xl h-auto z-100 gap-8 transition-shadow duration-300
+    }
+
+    /* --- Helpers --- */
+    /* Screen reader only - hides element visually but keeps it accessible */
+    .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border-width: 0;
+    }
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+button:hover {
+    cursor: pointer;
+}
+
+/* ============================================
+   VENDOR CUSTOMIZATIONS
+   ============================================ */
+/* Swiper equal height slides */
+.swiper-wrapper {
+    align-items: stretch;
+}
+
+.swiper-slide {
+    height: auto;
+    display: flex;
+}

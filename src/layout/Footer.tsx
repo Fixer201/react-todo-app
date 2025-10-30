@@ -5,7 +5,7 @@ import {
     slideFromLeft,
     slideFromRight,
     scaleFadeIn,
-} from '../../animations/motionVariants';
+} from '../animations/motionVariants';
 
 const Footer = () => {
     return (

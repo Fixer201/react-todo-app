@@ -6,10 +6,10 @@ import {
     sectionSlideFromTop,
     linkItem,
     headerSlide,
-} from '../../animations/motionVariants';
-import { IconButton } from '../elements/buttons';
-import { AccountMenu, SettingsMenu } from '../elements/dropdowns';
-import NavigationSection from '../sections/NavigationSection';
+} from '../animations/motionVariants';
+import { IconButton } from '../components/elements/buttons';
+import { AccountMenu, SettingsMenu } from '../components/elements/dropdowns';
+import NavigationSection from '../components/sections/NavigationSection';
 
 export interface NavLink {
     id: number;
@@ -250,7 +250,7 @@ const Header = () => {
                             />
                         </motion.a>
                         <a
-                            href="/"
+                            href="/public"
                             className="font-black text-sm md:text-base xl:text-lg whitespace-nowrap hover:text-secondary transition-colors duration-200"
                         >
                             EasyToDo

@@ -48,7 +48,7 @@ const PricingCard = ({
                         className="flex items-start gap-3 text-white"
                     >
                         <CheckmarkIcon variant="gradient"></CheckmarkIcon>
-                        <span className="text-md leading-relaxed">
+                        <span className="font-light text-md leading-relaxed">
                             {feature}
                         </span>
                     </li>

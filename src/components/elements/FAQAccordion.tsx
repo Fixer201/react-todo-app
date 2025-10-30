@@ -33,7 +33,7 @@ const FaqAccordion = ({ question, answer }: FAQAccordionProps) => {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="text-white text-lg pb-4">{answer}</div>
+          <div className="text-gray-300 font-light text-lg pb-4">{answer}</div>
         </div>
       </div>
     </article>

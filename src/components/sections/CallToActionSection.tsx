@@ -56,7 +56,7 @@ const CallToActionSection = () => {
                     Ready to{' '}
                     <span className="text-gradient">3x Your Productivity?</span>
                 </h2>
-                <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                <p className="text-xl font-light text-gray-300 max-w-2xl mx-auto">
                     Join thousands of teams who transformed their workflow with
                     EasyToDo
                 </p>

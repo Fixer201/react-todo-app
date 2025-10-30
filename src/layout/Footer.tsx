@@ -41,7 +41,7 @@ const Footer = () => {
                         when: 'beforeChildren',
                         delayChildren: 0.5,
                     }}
-                    className="flex gap-8 text-center"
+                    className="flex gap-8 font-light text-gray-300 text-center"
                 >
                     <motion.a
                         variants={slideFromLeft}

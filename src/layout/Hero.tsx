@@ -31,7 +31,7 @@ const Hero = () => {
                         duration: 1,
                         ease: 'easeOut',
                     }}
-                    className="text-lg md:text-2xl text-white glow-text-secondary"
+                    className="text-lg md:text-2xl font-light text-white glow-text-secondary"
                 >
                     Your ultimate task management solution
                 </motion.p>

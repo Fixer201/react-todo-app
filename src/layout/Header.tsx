@@ -20,7 +20,12 @@ export interface NavLink {
 
 export const navLinks: NavLink[] = [
     { id: 1, name: 'Home', href: '/', icon: <Home size={18} /> },
-    { id: 2, name: 'About Us', href: '/about', icon: <Info size={18} /> },
+    {
+        id: 2,
+        name: 'For Who',
+        href: '/whoOurUsers',
+        icon: <Info size={18} />,
+    },
     { id: 3, name: 'Our team', href: '/team', icon: <Users size={18} /> },
     {
         id: 4,

@@ -5,12 +5,15 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 import './styles/index.css';
 import App from './App';
 import StarryBackground from './components/StarryBackground';
+import { BrowserRouter } from 'react-router';
 
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
         <Analytics />
         <SpeedInsights />
         <StarryBackground></StarryBackground>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </StrictMode>,
 );

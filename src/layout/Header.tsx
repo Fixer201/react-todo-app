@@ -6,10 +6,13 @@ import {
     sectionSlideFromTop,
     linkItem,
     headerSlide,
+    fadeOverlay,
+    slideMenuFromRight,
 } from '../animations/motionVariants';
 import { IconButton } from '../components/elements/buttons';
 import { AccountMenu, SettingsMenu } from '../components/elements/dropdowns';
 import NavigationSection from '../components/sections/NavigationSection';
+import { useAuth } from '../context/AuthContext';
 
 export interface NavLink {
     id: number;
@@ -43,15 +46,15 @@ const Header = () => {
     const [currentTheme, setCurrentTheme] = useState<
         'light' | 'dark' | 'system'
     >('system');
+    const { openAuthModal } = useAuth();
 
     // Demo handlers
     const handleLogin = () => {
-        console.log('Login clicked');
-        setIsLoggedIn(true);
+        openAuthModal('login');
     };
 
     const handleSignUp = () => {
-        console.log('Sign Up clicked');
+        openAuthModal('register');
     };
 
     const handleProfile = () => {
@@ -148,9 +151,10 @@ const Header = () => {
                     <>
                         {/* Backdrop */}
                         <motion.div
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            exit={{ opacity: 0 }}
+                            variants={fadeOverlay}
+                            initial="hidden"
+                            animate="visible"
+                            exit="hidden"
                             transition={{ duration: 0.3 }}
                             className="fixed inset-0 bg-black/60 h-screen backdrop-blur-sm z-999 sm:hidden"
                             onClick={() => setIsMenuOpen(false)}
@@ -158,9 +162,10 @@ const Header = () => {
 
                         {/* Slide-in Menu */}
                         <motion.div
-                            initial={{ x: '100%' }}
-                            animate={{ x: 0 }}
-                            exit={{ x: '100%' }}
+                            variants={slideMenuFromRight}
+                            initial="hidden"
+                            animate="visible"
+                            exit="hidden"
                             transition={{
                                 duration: 0.4,
                                 ease: [0.4, 0, 0.2, 1], // easeOutCubic
@@ -255,7 +260,7 @@ const Header = () => {
                             />
                         </motion.a>
                         <a
-                            href="/public"
+                            href="/"
                             className="font-black text-sm md:text-base xl:text-lg whitespace-nowrap hover:text-secondary transition-colors duration-200"
                         >
                             EasyToDo

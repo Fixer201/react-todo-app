@@ -26,3 +26,6 @@ dist-types
 *.njsproj
 *.sln
 *.sw?
+
+# Documentation
+docs/

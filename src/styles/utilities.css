@@ -2,6 +2,44 @@
    UTILITIES LAYER
    ============================================ */
 @layer utilities {
+    /* --- Animations --- */
+    @keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        10%, 30%, 50%, 70%, 90% {
+            transform: translateX(-2px);
+        }
+        20%, 40%, 60%, 80% {
+            transform: translateX(2px);
+        }
+    }
+
+    @keyframes scale {
+        0% {
+            transform: scale(0.8);
+            opacity: 0;
+        }
+        50% {
+            transform: scale(1.1);
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    @keyframes slideDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-8px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     /* --- Glow Effects --- */
     .glow-icon-secondary {
         filter: drop-shadow(0 0 3px var(--color-secondary)) drop-shadow(0 0 10px var(--color-secondary));
@@ -41,6 +79,26 @@
 
     .group-hover-glow-red:hover {
         filter: drop-shadow(0 0 1px var(--color-red)) drop-shadow(0 0 5px var(--color-red));
+    }
+
+    /* --- Input Glow Effects --- */
+    .glow-input-focus {
+        box-shadow:
+            0 0 20px rgba(4, 102, 200, 0.4),
+            0 0 40px rgba(4, 102, 200, 0.2),
+            inset 0 0 15px rgba(4, 102, 200, 0.1);
+    }
+
+    .glow-input-error {
+        box-shadow:
+            0 0 15px rgba(239, 35, 60, 0.3),
+            0 0 30px rgba(239, 35, 60, 0.15);
+    }
+
+    .glow-input-success {
+        box-shadow:
+            0 0 15px rgba(34, 197, 94, 0.3),
+            0 0 30px rgba(34, 197, 94, 0.15);
     }
 
     /* --- Layout Utilities --- */

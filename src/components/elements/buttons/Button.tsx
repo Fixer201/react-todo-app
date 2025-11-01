@@ -5,7 +5,7 @@ export interface ButtonProps {
     children?: React.ReactNode;
 
     // Styling
-    variant?: 'primary' | 'secondary' | 'cta';
+    variant?: 'primary' | 'secondary' | 'cta' | 'transparent';
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
     fullWidth?: boolean;
     className?: string;
@@ -52,6 +52,7 @@ const getVariantClasses = (variant: ButtonProps['variant']): string => {
         primary: 'bg-primary text-white hover:bg-secondary hover:text-black',
         secondary: 'bg-white text-black hover:bg-primary hover:text-white',
         cta: 'bg-secondary text-white hover:bg-white hover:text-black hover:font-bold',
+        transparent: 'bg-transparent text-white',
     };
 
     return variants[variant || 'primary'];

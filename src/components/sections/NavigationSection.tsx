@@ -2,6 +2,11 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Bell, LogIn, LogOut, User as UserIcon, UserPlus } from 'lucide-react';
 import { navLinks, NavLink } from '../../layout/Header';
+import {
+    slideFromRight,
+    scaleXIn,
+    smallSlideDown,
+} from '../../animations/motionVariants';
 
 interface NavigationSectionProps {
     setIsMenuOpen: (value: boolean) => void;
@@ -30,8 +35,9 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
         <>
             <div className="mb-6">
                 <motion.div
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    variants={smallSlideDown}
+                    initial="hidden"
+                    animate="visible"
                     transition={{
                         delay: 0.15,
                         duration: 0.3,
@@ -44,14 +50,9 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                     {navLinks.map(({ id, name, href, icon }: NavLink) => (
                         <motion.li
                             key={id}
-                            initial={{
-                                x: 50,
-                                opacity: 0,
-                            }}
-                            animate={{
-                                x: 0,
-                                opacity: 1,
-                            }}
+                            variants={slideFromRight}
+                            initial="hidden"
+                            animate="show"
                             transition={{
                                 delay: 0.15 + id * 0.05,
                                 duration: 0.3,
@@ -76,16 +77,18 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
 
             {/* Divider */}
             <motion.div
-                initial={{ scaleX: 0 }}
-                animate={{ scaleX: 1 }}
+                variants={scaleXIn}
+                initial="hidden"
+                animate="visible"
                 transition={{ delay: 0.35, duration: 0.3 }}
                 className="w-full h-px bg-secondary/20 my-4"
             />
 
             {/* Account Section */}
             <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
+                variants={smallSlideDown}
+                initial="hidden"
+                animate="visible"
                 transition={{ delay: 0.4, duration: 0.3 }}
                 className="flex flex-col gap-3"
             >
@@ -96,8 +99,9 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                 {!isLoggedIn ? (
                     <div className="flex flex-col gap-2">
                         <motion.button
-                            initial={{ x: 50, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
+                            variants={slideFromRight}
+                            initial="hidden"
+                            animate="show"
                             transition={{
                                 delay: 0.45,
                                 duration: 0.3,
@@ -115,8 +119,9 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                             <span className="text-sm font-medium">Login</span>
                         </motion.button>
                         <motion.button
-                            initial={{ x: 50, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
+                            variants={slideFromRight}
+                            initial="hidden"
+                            animate="show"
                             transition={{
                                 delay: 0.5,
                                 duration: 0.2,
@@ -135,8 +140,9 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                     <div className="flex flex-col gap-2">
                         {/* User Info */}
                         <motion.div
-                            initial={{ x: 50, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
+                            variants={slideFromRight}
+                            initial="hidden"
+                            animate="show"
                             transition={{
                                 delay: 0.45,
                                 duration: 0.3,
@@ -152,8 +158,9 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                         </motion.div>
 
                         <motion.button
-                            initial={{ x: 50, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
+                            variants={slideFromRight}
+                            initial="hidden"
+                            animate="show"
                             transition={{
                                 delay: 0.5,
                                 duration: 0.3,
@@ -174,8 +181,9 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                         </motion.button>
 
                         <motion.button
-                            initial={{ x: 50, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
+                            variants={slideFromRight}
+                            initial="hidden"
+                            animate="show"
                             transition={{
                                 delay: 0.55,
                                 duration: 0.3,
@@ -204,8 +212,9 @@ const NavigationSection: React.FC<NavigationSectionProps> = ({
                         <div className="h-px bg-secondary/20 my-1" />
 
                         <motion.button
-                            initial={{ x: 50, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
+                            variants={slideFromRight}
+                            initial="hidden"
+                            animate="show"
                             transition={{
                                 delay: 0.6,
                                 duration: 0.3,

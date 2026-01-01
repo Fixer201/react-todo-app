@@ -2,7 +2,7 @@
 
 > Modern, high-performance task management landing page built with React and TypeScript
 
-![Hero Preview](./screenshots/hero.png)
+![Hero Preview](./frontend/screenshots/hero.png)
 
 [![Live Demo](https://img.shields.io/badge/demo-live-success)](https://easytodo-landing.vercel.app/)
 [![Lighthouse](https://img.shields.io/badge/lighthouse-98%2F100-success)](https://easytodo-landing.vercel.app/)
@@ -16,7 +16,7 @@
 
 ## 📊 Performance Metrics
 
-![Lighthouse Scores](./screenshots/lighthouse.png)
+![Lighthouse Scores](./frontend/screenshots/lighthouse.png)
 
 **Lighthouse Scores:**
 
@@ -217,30 +217,30 @@ interface SocialProofFooterProps {
 
 ### Features Section
 
-![Features](./screenshots/features.png)
+![Features](./frontend/screenshots/features.png)
 
 ### Pricing Section
 
-![Pricing](./screenshots/pricing.png)
+![Pricing](./frontend/screenshots/pricing.png)
 
 ### FAQ Section
 
-![FAQ](./screenshots/faq.png)
+![FAQ](./frontend/screenshots/faq.png)
 
 ### CTA Section
 
-![CTA](./screenshots/cta.png)
+![CTA](./frontend/screenshots/cta.png)
 
 </details>
 
 <details>
 <summary>📱 Mobile Views</summary>
 
-![Mobile Hero](./screenshots/mobile/mobile-hero.png)
-![Mobile Reviews](./screenshots/mobile/mobile-review.png)
-![Mobile Pricing](./screenshots/mobile/mobile-pricing.png)
-![Mobile FAQ](./screenshots/mobile/mobile-faq.png)
-![Mobile CTA](./screenshots/mobile/mobile-cta.png)
+![Mobile Hero](./frontend/screenshots/mobile/mobile-hero.png)
+![Mobile Reviews](./frontend/screenshots/mobile/mobile-review.png)
+![Mobile Pricing](./frontend/screenshots/mobile/mobile-pricing.png)
+![Mobile FAQ](./frontend/screenshots/mobile/mobile-faq.png)
+![Mobile CTA](./frontend/screenshots/mobile/mobile-cta.png)
 
 </details>
 

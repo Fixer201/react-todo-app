@@ -10,7 +10,7 @@
 ## 🚀 Quick Links
 
 - **[Live Demo](https://easytodo-landing.vercel.app/)**
-- **[Repository](https://github.com/yourusername/easytodo-landing)**
+- **[Repository](https://github.com/Fixer201/react-todo-app)**
 
 ---
 
